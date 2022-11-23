@@ -312,12 +312,12 @@ Mel Medarda,Margot,f/f,False,0
 Mel Medarda,Grayson,f/f,False,6
 Mel Medarda,Eve,f/f,False,0
 Mel Medarda,Elora,f/f,False,20
-Mel Medarda,Jinx,f/f,False,1
+Mel Medarda,Jinx,f/f,False,4
 Mel Medarda,Ximena,f/f,False,1
 Mel Medarda,Ambessa Medarda,f/f,False,25
 Mel Medarda,Babette,f/f,False,0
 Mel Medarda,Brothel Girl,f/f,False,0
-Mel Medarda,Caitlyn,f/f,False,1
+Mel Medarda,Caitlyn,f/f,False,13
 Mel Medarda,Cassandra Kiramman,f/f,False,0
 Mel Medarda,Vander,f/m,False,0
 Mel Medarda,Tobias Kiramman,f/m,False,0
@@ -336,14 +336,14 @@ Mel Medarda,Claggor,f/m,False,1
 Mel Medarda,Harold,f/m,False,0
 Mel Medarda,Heimerdinger,f/m,False,0
 Mel Medarda,Hoskel,f/m,False,1
-Mel Medarda,Ekko,f/m,False,0
+Mel Medarda,Ekko,f/m,False,1
 Mel Medarda,Huck,f/m,False,0
 Mel Medarda,Jericho,f/m,False,0
-Mel Medarda,Viktor,f/m,False,205
+Mel Medarda,Viktor,f/m,False,204
 Mel Medarda,Local Cuisine Guy,f/m,False,0
 Mel Medarda,Lock,f/m,False,0
 Mel Medarda,Marcus,f/m,False,0
-Mel Medarda,Jayce,f/m,False,57
+Mel Medarda,Jayce,f/m,False,459
 Mel Medarda,Mylo,f/m,False,0
 Mel Medarda,Hexcore,f/other,False,0
 Mel Medarda,Rio,f/other,False,0
@@ -503,9 +503,9 @@ Jinx,Ambessa Medarda,f/f,False,0
 Jinx,Babette,f/f,False,0
 Jinx,Brothel Girl,f/f,False,0
 Jinx,Caitlyn,f/f,False,338
-Jinx,Cassandra Kiramman,f/f,False,0
+Jinx,Cassandra Kiramman,f/f,False,3
 Jinx,Vander,f/m,False,7
-Jinx,Tobias Kiramman,f/m,False,0
+Jinx,Tobias Kiramman,f/m,False,1
 Jinx,Thieram,f/m,False,8
 Jinx,Smeech,f/m,False,0
 Jinx,Singed,f/m,False,15
@@ -632,7 +632,7 @@ Babette,Mylo,f/m,False,0
 Babette,Hexcore,f/other,False,0
 Babette,Rio,f/other,False,0
 Brothel Girl,Brothel Girl,f/f,True,0
-Brothel Girl,Caitlyn,f/f,False,5
+Brothel Girl,Caitlyn,f/f,False,0
 Brothel Girl,Cassandra Kiramman,f/f,False,0
 Brothel Girl,Vander,f/m,False,0
 Brothel Girl,Tobias Kiramman,f/m,False,0
@@ -663,9 +663,9 @@ Brothel Girl,Mylo,f/m,False,0
 Brothel Girl,Hexcore,f/other,False,0
 Brothel Girl,Rio,f/other,False,0
 Caitlyn,Caitlyn,f/f,True,0
-Caitlyn,Cassandra Kiramman,f/f,False,0
+Caitlyn,Cassandra Kiramman,f/f,False,61
 Caitlyn,Vander,f/m,False,0
-Caitlyn,Tobias Kiramman,f/m,False,0
+Caitlyn,Tobias Kiramman,f/m,False,22
 Caitlyn,Thieram,f/m,False,0
 Caitlyn,Smeech,f/m,False,0
 Caitlyn,Singed,f/m,False,1
@@ -772,7 +772,7 @@ Tobias Kiramman,Viktor,m/m,False,0
 Tobias Kiramman,Local Cuisine Guy,m/m,False,0
 Tobias Kiramman,Lock,m/m,False,0
 Tobias Kiramman,Marcus,m/m,False,0
-Tobias Kiramman,Jayce,m/m,False,0
+Tobias Kiramman,Jayce,m/m,False,2
 Tobias Kiramman,Mylo,m/m,False,0
 Tobias Kiramman,Hexcore,m/other,False,0
 Tobias Kiramman,Rio,m/other,False,0
