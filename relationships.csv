@@ -57,12 +57,12 @@ Vi,Margot,f/f,False,0
 Vi,Grayson,f/f,False,1
 Vi,Eve,f/f,False,0
 Vi,Elora,f/f,False,0
-Vi,Jinx,f/f,False,1
+Vi,Jinx,f/f,False,1102
 Vi,Ximena,f/f,False,0
 Vi,Ambessa Medarda,f/f,False,0
 Vi,Babette,f/f,False,0
 Vi,Brothel Girl,f/f,False,0
-Vi,Caitlyn,f/f,False,4
+Vi,Caitlyn,f/f,False,4898
 Vi,Cassandra Kiramman,f/f,False,12
 Vi,Vander,f/m,False,1
 Vi,Tobias Kiramman,f/m,False,16
@@ -339,7 +339,7 @@ Mel Medarda,Hoskel,f/m,False,1
 Mel Medarda,Ekko,f/m,False,0
 Mel Medarda,Huck,f/m,False,0
 Mel Medarda,Jericho,f/m,False,0
-Mel Medarda,Viktor,f/m,False,204
+Mel Medarda,Viktor,f/m,False,205
 Mel Medarda,Local Cuisine Guy,f/m,False,0
 Mel Medarda,Lock,f/m,False,0
 Mel Medarda,Marcus,f/m,False,0
@@ -502,14 +502,14 @@ Jinx,Ximena,f/f,False,0
 Jinx,Ambessa Medarda,f/f,False,0
 Jinx,Babette,f/f,False,0
 Jinx,Brothel Girl,f/f,False,0
-Jinx,Caitlyn,f/f,False,337
+Jinx,Caitlyn,f/f,False,338
 Jinx,Cassandra Kiramman,f/f,False,0
 Jinx,Vander,f/m,False,7
 Jinx,Tobias Kiramman,f/m,False,0
 Jinx,Thieram,f/m,False,8
 Jinx,Smeech,f/m,False,0
 Jinx,Singed,f/m,False,15
-Jinx,Silco,f/m,False,1
+Jinx,Silco,f/m,False,1273
 Jinx,Benzo,f/m,False,1
 Jinx,Bolbok,f/m,False,0
 Jinx,Scar,f/m,False,4
@@ -521,10 +521,10 @@ Jinx,Claggor,f/m,False,17
 Jinx,Harold,f/m,False,0
 Jinx,Heimerdinger,f/m,False,2
 Jinx,Hoskel,f/m,False,0
-Jinx,Ekko,f/m,False,958
+Jinx,Ekko,f/m,False,959
 Jinx,Huck,f/m,False,0
 Jinx,Jericho,f/m,False,0
-Jinx,Viktor,f/m,False,207
+Jinx,Viktor,f/m,False,208
 Jinx,Local Cuisine Guy,f/m,False,0
 Jinx,Lock,f/m,False,0
 Jinx,Marcus,f/m,False,0
@@ -1095,7 +1095,7 @@ Viktor,Viktor,m/m,True,3
 Viktor,Local Cuisine Guy,m/m,False,0
 Viktor,Lock,m/m,False,0
 Viktor,Marcus,m/m,False,1
-Viktor,Jayce,m/m,False,2
+Viktor,Jayce,m/m,False,2490
 Viktor,Mylo,m/m,False,0
 Viktor,Hexcore,m/other,False,0
 Viktor,Rio,m/other,False,7
