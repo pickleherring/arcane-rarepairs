@@ -21,7 +21,7 @@ streamlit.markdown("""
 
 **← check 'selfcest' to also include pairings of characters with themselves**
 
-**← deselect any characters you are not interested in**
+**← narrow down to the characters you are interested in**
 
 **↓ browse the 'rarepairs' and 'zeropairs' tabs for rare or nonexistent pairings**
 
@@ -32,6 +32,7 @@ streamlit.markdown("""
 streamlit.sidebar.subheader('filters')
 
 relationships = pandas.read_csv('relationships.csv')
+relationships = relationships.sort_values(['A', 'B'])
 
 selected_types = streamlit.sidebar.multiselect(
     'relationships',
