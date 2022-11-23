@@ -13,7 +13,7 @@ n_top_pairs = 5
 
 streamlit.title('Arcane rarepairs')
 streamlit.markdown('Browse fanfiction rarepairs from the acclaimed steampunk melodrama *Arcane*.')
-streamlit.caption('last updated: 22nd Nov 2022')
+streamlit.caption('last updated: 23rd Nov 2022')
 streamlit.markdown("""
 ---
 
