@@ -1,6 +1,6 @@
 """Scrape fic counts for Arcane pairs.
 
-Searches for 1081 possible pairings, including characters with themselves.
+Searches for 1128 possible pairings, including characters with themselves.
 To stay within AO3's rate limit for automated access, there is a 5-second pause between counts.
 So this script will take quite a long time to run. You do the math.
 
