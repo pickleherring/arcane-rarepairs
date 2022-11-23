@@ -52,20 +52,12 @@ class RateLimitedError(Exception):
 
 def wrangle_fandom_tag(name):
     """Determine the appropriate fandom tag for an Arcane character.
-
-    Follows AO3 wrangling guidelines for character tags:
-    https://archiveofourown.org/wrangling_guidelines/7
-
-    canonical character name is 'first name + last name' -> no fandom tag needed
-    canonical character name is one name only -> fandom tag needed for disambiguation
     
     fandom for league champions is 'League of Legends'
     fandom for non-champion Arcane characters is 'Arcane: League of Legends'
     """
 
-    if len(name.split()) > 1:
-        return ''
-    elif name in champions:
+    if name in champions:
         return ' (League of Legends)'
     else:
         return ' (Arcane: League of Legends)'
@@ -83,27 +75,41 @@ def reverse_names(name):
     return ' '.join(names)
 
 
+def is_multiple_name(name):
+    """Helper function for counting names.
+    
+    i.e. does character have more than one word in their name?
+    """
+
+    return len(name.split()) > 1
+
+
 def wrangle_relationship_tag(name1, name2):
     """Determine the canonical relationship tag for a pairing.
 
-    Follows AO3 wrangling guidelines for relationship tags:
+    Follows AO3 wrangling guidelines for relationship and name tags:
+    https://archiveofourown.org/wrangling_guidelines/7
     https://archiveofourown.org/wrangling_guidelines/8
 
     names in alphabetical order by last name, separated by slash
-    at least one character does not need fandom disambiguation -> no overall fandom disambiguation
-    both are single-name characters from same fandom -> overall fandom disambiguation at end
-    both are single-name characters and only one is league champion -> separate disambiguation tags
+    characters are from same fandom and at least one is double-name -> no fandom disambiguation
+    characters are from same fandom and both are single-name -> overall fandom disambiguation at end of tag
+    characters are from separate fandoms -> fandom disambiguation for any single-name characters
     """
 
     name1, name2 = sorted((name1, name2), key=reverse_names)
     fandom1 = wrangle_fandom_tag(name1)
     fandom2 = wrangle_fandom_tag(name2)
 
-    if (fandom1 == '') or (fandom2 == ''):
+    if fandom1 == fandom2:
         fandom1 = ''
-        fandom2 = ''
-    elif fandom1 == fandom2:
-        fandom1 = ''
+        if is_multiple_name(name1) or is_multiple_name(name2):
+            fandom2 = ''
+    else:
+        if is_multiple_name(name1):
+            fandom1 = ''
+        if is_multiple_name(name2):
+            fandom2 = ''
     
     return f'{name1}{fandom1}/{name2}{fandom2}'
 
