@@ -32,7 +32,7 @@ backoff_factor = 60
 url = 'https://archiveofourown.org/works/search'
 search_field = 'work_search[query]'
 
-work_count_pattern = regex.compile('[0-9]+')
+work_count_pattern = regex.compile('[0-9,]+')
 
 champions = [
     'Caitlyn',
@@ -128,7 +128,8 @@ def get_work_count(session, name1, name2):
     header = main_div.find('h3', attrs={'class': 'heading'})
 
     if header:
-        work_count = int(work_count_pattern.match(header.get_text()).group(0))
+        work_count = work_count_pattern.match(header.get_text()).group(0)
+        work_count = int(work_count.replace(',', ''))
     else:
         work_count = 0
 
