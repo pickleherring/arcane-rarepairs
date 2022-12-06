@@ -49,7 +49,7 @@ Amara,Rio,f/other,False,0
 Vi,Vi,f/f,True,0
 Vi,Sky,f/f,False,2
 Vi,Shoola,f/f,False,0
-Vi,Sevika,f/f,False,46
+Vi,Sevika,f/f,False,48
 Vi,Renni,f/f,False,0
 Vi,Ran,f/f,False,0
 Vi,Mel Medarda,f/f,False,2
@@ -57,19 +57,19 @@ Vi,Margot,f/f,False,0
 Vi,Grayson,f/f,False,1
 Vi,Eve,f/f,False,0
 Vi,Elora,f/f,False,0
-Vi,Jinx,f/f,False,1102
+Vi,Jinx,f/f,False,1129
 Vi,Ximena,f/f,False,0
 Vi,Ambessa Medarda,f/f,False,0
 Vi,Babette,f/f,False,0
 Vi,Brothel Girl,f/f,False,0
-Vi,Caitlyn,f/f,False,4898
+Vi,Caitlyn,f/f,False,4979
 Vi,Cassandra Kiramman,f/f,False,12
 Vi,Vander,f/m,False,1
 Vi,Tobias Kiramman,f/m,False,16
 Vi,Thieram,f/m,False,0
 Vi,Smeech,f/m,False,0
-Vi,Singed,f/m,False,1
-Vi,Silco,f/m,False,56
+Vi,Singed,f/m,False,2
+Vi,Silco,f/m,False,58
 Vi,Benzo,f/m,False,0
 Vi,Bolbok,f/m,False,0
 Vi,Scar,f/m,False,0
@@ -84,11 +84,11 @@ Vi,Hoskel,f/m,False,0
 Vi,Ekko,f/m,False,83
 Vi,Huck,f/m,False,0
 Vi,Jericho,f/m,False,0
-Vi,Viktor,f/m,False,25
+Vi,Viktor,f/m,False,26
 Vi,Local Cuisine Guy,f/m,False,0
 Vi,Lock,f/m,False,0
 Vi,Marcus,f/m,False,1
-Vi,Jayce,f/m,False,57
+Vi,Jayce,f/m,False,61
 Vi,Mylo,f/m,False,20
 Vi,Hexcore,f/other,False,0
 Vi,Rio,f/other,False,0
@@ -129,11 +129,11 @@ Sky,Hoskel,f/m,False,0
 Sky,Ekko,f/m,False,0
 Sky,Huck,f/m,False,0
 Sky,Jericho,f/m,False,0
-Sky,Viktor,f/m,False,84
+Sky,Viktor,f/m,False,86
 Sky,Local Cuisine Guy,f/m,False,0
 Sky,Lock,f/m,False,0
 Sky,Marcus,f/m,False,0
-Sky,Jayce,f/m,False,7
+Sky,Jayce,f/m,False,8
 Sky,Mylo,f/m,False,0
 Sky,Hexcore,f/other,False,0
 Sky,Rio,f/other,False,0
@@ -183,13 +183,13 @@ Shoola,Hexcore,f/other,False,0
 Shoola,Rio,f/other,False,0
 Sevika,Sevika,f/f,True,0
 Sevika,Renni,f/f,False,0
-Sevika,Ran,f/f,False,9
-Sevika,Mel Medarda,f/f,False,19
+Sevika,Ran,f/f,False,8
+Sevika,Mel Medarda,f/f,False,18
 Sevika,Margot,f/f,False,0
 Sevika,Grayson,f/f,False,11
 Sevika,Eve,f/f,False,0
 Sevika,Elora,f/f,False,0
-Sevika,Jinx,f/f,False,120
+Sevika,Jinx,f/f,False,124
 Sevika,Ximena,f/f,False,0
 Sevika,Ambessa Medarda,f/f,False,6
 Sevika,Babette,f/f,False,0
@@ -311,10 +311,10 @@ Mel Medarda,Mel Medarda,f/f,True,0
 Mel Medarda,Margot,f/f,False,0
 Mel Medarda,Grayson,f/f,False,6
 Mel Medarda,Eve,f/f,False,0
-Mel Medarda,Elora,f/f,False,20
-Mel Medarda,Jinx,f/f,False,4
+Mel Medarda,Elora,f/f,False,22
+Mel Medarda,Jinx,f/f,False,5
 Mel Medarda,Ximena,f/f,False,1
-Mel Medarda,Ambessa Medarda,f/f,False,25
+Mel Medarda,Ambessa Medarda,f/f,False,26
 Mel Medarda,Babette,f/f,False,0
 Mel Medarda,Brothel Girl,f/f,False,0
 Mel Medarda,Caitlyn,f/f,False,13
@@ -324,7 +324,7 @@ Mel Medarda,Tobias Kiramman,f/m,False,0
 Mel Medarda,Thieram,f/m,False,0
 Mel Medarda,Smeech,f/m,False,0
 Mel Medarda,Singed,f/m,False,0
-Mel Medarda,Silco,f/m,False,10
+Mel Medarda,Silco,f/m,False,11
 Mel Medarda,Benzo,f/m,False,0
 Mel Medarda,Bolbok,f/m,False,0
 Mel Medarda,Scar,f/m,False,0
@@ -339,11 +339,11 @@ Mel Medarda,Hoskel,f/m,False,1
 Mel Medarda,Ekko,f/m,False,1
 Mel Medarda,Huck,f/m,False,0
 Mel Medarda,Jericho,f/m,False,0
-Mel Medarda,Viktor,f/m,False,204
+Mel Medarda,Viktor,f/m,False,213
 Mel Medarda,Local Cuisine Guy,f/m,False,0
 Mel Medarda,Lock,f/m,False,0
 Mel Medarda,Marcus,f/m,False,0
-Mel Medarda,Jayce,f/m,False,459
+Mel Medarda,Jayce,f/m,False,474
 Mel Medarda,Mylo,f/m,False,0
 Mel Medarda,Hexcore,f/other,False,0
 Mel Medarda,Rio,f/other,False,0
@@ -489,11 +489,11 @@ Elora,Hoskel,f/m,False,0
 Elora,Ekko,f/m,False,0
 Elora,Huck,f/m,False,0
 Elora,Jericho,f/m,False,0
-Elora,Viktor,f/m,False,0
+Elora,Viktor,f/m,False,1
 Elora,Local Cuisine Guy,f/m,False,0
 Elora,Lock,f/m,False,0
 Elora,Marcus,f/m,False,0
-Elora,Jayce,f/m,False,0
+Elora,Jayce,f/m,False,1
 Elora,Mylo,f/m,False,0
 Elora,Hexcore,f/other,False,0
 Elora,Rio,f/other,False,0
@@ -502,14 +502,14 @@ Jinx,Ximena,f/f,False,0
 Jinx,Ambessa Medarda,f/f,False,0
 Jinx,Babette,f/f,False,0
 Jinx,Brothel Girl,f/f,False,0
-Jinx,Caitlyn,f/f,False,338
+Jinx,Caitlyn,f/f,False,343
 Jinx,Cassandra Kiramman,f/f,False,3
 Jinx,Vander,f/m,False,7
 Jinx,Tobias Kiramman,f/m,False,1
-Jinx,Thieram,f/m,False,8
+Jinx,Thieram,f/m,False,9
 Jinx,Smeech,f/m,False,0
 Jinx,Singed,f/m,False,15
-Jinx,Silco,f/m,False,1273
+Jinx,Silco,f/m,False,1302
 Jinx,Benzo,f/m,False,1
 Jinx,Bolbok,f/m,False,0
 Jinx,Scar,f/m,False,4
@@ -521,14 +521,14 @@ Jinx,Claggor,f/m,False,17
 Jinx,Harold,f/m,False,0
 Jinx,Heimerdinger,f/m,False,2
 Jinx,Hoskel,f/m,False,0
-Jinx,Ekko,f/m,False,959
+Jinx,Ekko,f/m,False,967
 Jinx,Huck,f/m,False,0
 Jinx,Jericho,f/m,False,0
-Jinx,Viktor,f/m,False,208
+Jinx,Viktor,f/m,False,212
 Jinx,Local Cuisine Guy,f/m,False,0
 Jinx,Lock,f/m,False,0
 Jinx,Marcus,f/m,False,0
-Jinx,Jayce,f/m,False,19
+Jinx,Jayce,f/m,False,20
 Jinx,Mylo,f/m,False,28
 Jinx,Hexcore,f/other,False,0
 Jinx,Rio,f/other,False,0
@@ -632,7 +632,7 @@ Babette,Mylo,f/m,False,0
 Babette,Hexcore,f/other,False,0
 Babette,Rio,f/other,False,0
 Brothel Girl,Brothel Girl,f/f,True,0
-Brothel Girl,Caitlyn,f/f,False,0
+Brothel Girl,Caitlyn,f/f,False,3
 Brothel Girl,Cassandra Kiramman,f/f,False,0
 Brothel Girl,Vander,f/m,False,0
 Brothel Girl,Tobias Kiramman,f/m,False,0
@@ -684,11 +684,11 @@ Caitlyn,Hoskel,f/m,False,0
 Caitlyn,Ekko,f/m,False,18
 Caitlyn,Huck,f/m,False,1
 Caitlyn,Jericho,f/m,False,0
-Caitlyn,Viktor,f/m,False,21
+Caitlyn,Viktor,f/m,False,22
 Caitlyn,Local Cuisine Guy,f/m,False,0
 Caitlyn,Lock,f/m,False,0
 Caitlyn,Marcus,f/m,False,3
-Caitlyn,Jayce,f/m,False,147
+Caitlyn,Jayce,f/m,False,150
 Caitlyn,Mylo,f/m,False,0
 Caitlyn,Hexcore,f/other,False,0
 Caitlyn,Rio,f/other,False,0
@@ -843,7 +843,7 @@ Singed,Hoskel,m/m,False,0
 Singed,Ekko,m/m,False,0
 Singed,Huck,m/m,False,0
 Singed,Jericho,m/m,False,0
-Singed,Viktor,m/m,False,54
+Singed,Viktor,m/m,False,55
 Singed,Local Cuisine Guy,m/m,False,0
 Singed,Lock,m/m,False,0
 Singed,Marcus,m/m,False,0
@@ -926,7 +926,7 @@ Scar,Claggor,m/m,False,0
 Scar,Harold,m/m,False,0
 Scar,Heimerdinger,m/m,False,0
 Scar,Hoskel,m/m,False,0
-Scar,Ekko,m/m,False,18
+Scar,Ekko,m/m,False,19
 Scar,Huck,m/m,False,0
 Scar,Jericho,m/m,False,0
 Scar,Viktor,m/m,False,0
@@ -1038,10 +1038,10 @@ Harold,Hexcore,m/other,False,0
 Harold,Rio,m/other,False,0
 Heimerdinger,Heimerdinger,m/m,True,0
 Heimerdinger,Hoskel,m/m,False,0
-Heimerdinger,Ekko,m/m,False,22
+Heimerdinger,Ekko,m/m,False,21
 Heimerdinger,Huck,m/m,False,0
 Heimerdinger,Jericho,m/m,False,0
-Heimerdinger,Viktor,m/m,False,23
+Heimerdinger,Viktor,m/m,False,24
 Heimerdinger,Local Cuisine Guy,m/m,False,0
 Heimerdinger,Lock,m/m,False,0
 Heimerdinger,Marcus,m/m,False,0
@@ -1095,7 +1095,7 @@ Viktor,Viktor,m/m,True,3
 Viktor,Local Cuisine Guy,m/m,False,0
 Viktor,Lock,m/m,False,0
 Viktor,Marcus,m/m,False,1
-Viktor,Jayce,m/m,False,2490
+Viktor,Jayce,m/m,False,2523
 Viktor,Mylo,m/m,False,0
 Viktor,Hexcore,m/other,False,0
 Viktor,Rio,m/other,False,7

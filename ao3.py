@@ -17,6 +17,7 @@ Results are saved to 'relationships.csv' with columns:
 """
 
 import itertools
+import os
 import time
 
 import bs4
@@ -25,12 +26,18 @@ import regex
 import requests
 
 
+username = os.environ.get('AO3_USERNAME')
+password = os.environ.get('AO3_PASSWORD')
+
 # NOTE: Set a very conservative sleep period to avoid AO3's rate limiting.
 sleep_period = 5
 backoff_factor = 60
 
-url = 'https://archiveofourown.org/works/search'
+login_url = 'https://archiveofourown.org/users/login'
+search_url = 'https://archiveofourown.org/works/search'
 search_field = 'work_search[query]'
+
+parser = 'lxml'
 
 work_count_pattern = regex.compile('[0-9,]+')
 
@@ -44,6 +51,15 @@ champions = [
     'Vi',
     'Viktor',
 ]
+
+special_case_names = [
+    'Brothel Girl',
+    'Local Cuisine Guy',
+]
+
+
+class LoginError(Exception):
+    pass
 
 
 class RateLimitedError(Exception):
@@ -69,19 +85,24 @@ def reverse_names(name):
     i.e. switches first name and last name
     """
 
-    names = name.split()
-    names.reverse()
-
-    return ' '.join(names)
+    if name in special_case_names:
+        return name
+    else:
+        names = name.split()
+        names.reverse()
+        return ' '.join(names)
 
 
 def is_multiple_name(name):
     """Helper function for counting names.
     
-    i.e. does character have more than one word in their name?
+    i.e. does character have first name and family name?
     """
 
-    return len(name.split()) > 1
+    if name in special_case_names:
+        return False
+    else:
+        return len(name.split()) > 1
 
 
 def wrangle_relationship_tag(name1, name2):
@@ -114,6 +135,28 @@ def wrangle_relationship_tag(name1, name2):
     return f'{name1}{fandom1}/{name2}{fandom2}'
 
 
+def login(session, username, password):
+    """Log in to AO3.
+    """
+
+    response = session.get(login_url)
+    soup = bs4.BeautifulSoup(response.text, features=parser)
+    authenticity_token = soup.find('input', attrs={'name': 'authenticity_token'})['value']
+
+    params = {
+        'user[login]': username,
+        'user[password]': password,
+        'authenticity_token': authenticity_token
+    }
+
+    response = session.post(login_url, params=params, allow_redirects=False)
+    
+    if response.status_code != 302:
+        raise LoginError('invalid username or password')
+
+    return session
+
+
 def get_work_count(session, name1, name2):
     """Get number of works for a relationship.
 
@@ -124,12 +167,12 @@ def get_work_count(session, name1, name2):
 
     relationship_tag = wrangle_relationship_tag(name1, name2)
 
-    response = session.get(url, params={search_field: f'"{relationship_tag}"'})
+    response = session.get(search_url, params={search_field: f'"{relationship_tag}"'})
 
     if response.status_code == 429:
-        raise RateLimitedError()
+        raise RateLimitedError(f'rate limited with sleep period {sleep_period}, try increasing')
 
-    soup = bs4.BeautifulSoup(response.text, features='lxml')
+    soup = bs4.BeautifulSoup(response.text, features=parser)
     main_div = soup.find('div', attrs={'id': 'main'})
     header = main_div.find('h3', attrs={'class': 'heading'})
 
@@ -173,6 +216,12 @@ if __name__ == '__main__':
         )
     )
 
+    if username and password:
+        session = login(session, username, password)
+        print(f'logged in as {username}')
+    
+    output_filename = 'relationships.csv'
+
     for a, b in zip(relationships['A'], relationships['B']):
 
         if started:
@@ -180,10 +229,14 @@ if __name__ == '__main__':
         else:
             started = True
 
-        work_count = get_work_count(session, a, b)
-        work_counts.append(work_count)
-
-        print(f'[{len(work_counts)} of {n_pairs}] {a}/{b}: {work_count}')
-            
+        try:
+            work_count = get_work_count(session, a, b)
+            work_counts.append(work_count)
+            print(f'[{len(work_counts)} of {n_pairs}] {a}/{b}: {work_count}')
+        except RateLimitedError:
+            output_filename = 'temp.csv'
+            print('rate limited, aborting. incomplete results saved to \'temp.csv\'')
+            break
+    
     relationships['count'] = work_counts
-    relationships.to_csv('relationships.csv', index=False)
+    relationships.to_csv(output_filename, index=False)

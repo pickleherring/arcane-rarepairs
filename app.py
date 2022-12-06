@@ -10,10 +10,13 @@ import ao3
 n_rarepairs = 20
 n_top_pairs = 5
 
+relationships = pandas.read_csv('relationships.csv')
+relationships = relationships.sort_values(['A', 'B'])
+
 
 streamlit.title('Arcane rarepairs')
 streamlit.markdown('Browse fanfiction rarepairs from the acclaimed steampunk melodrama *Arcane*.')
-streamlit.caption('last updated: 23rd Nov 2022')
+streamlit.caption('last updated: 6th Dec 2022')
 streamlit.markdown("""
 ---
 
@@ -21,7 +24,7 @@ streamlit.markdown("""
 
 **← check 'selfcest' to also include pairings of characters with themselves**
 
-**← narrow down to the characters you are interested in**
+**← select the character(s) you are interested in**
 
 **↓ browse the 'rarepairs' and 'zeropairs' tabs for rare or nonexistent pairings**
 
@@ -31,11 +34,8 @@ streamlit.markdown("""
 
 streamlit.sidebar.subheader('filters')
 
-relationships = pandas.read_csv('relationships.csv')
-relationships = relationships.sort_values(['A', 'B'])
-
 selected_types = streamlit.sidebar.multiselect(
-    'relationships',
+    'types',
     relationships['type'].unique(),
     default=relationships['type'].unique()
 )
@@ -44,8 +44,7 @@ selfcest = streamlit.sidebar.checkbox('selfcest')
 
 selected_characters = streamlit.sidebar.multiselect(
     'characters',
-    relationships['A'].unique(),
-    default=relationships['A'].unique()
+    relationships['A'].unique()
 )
 
 relationships = relationships[relationships['A'].isin(selected_characters) | relationships['B'].isin(selected_characters)]
@@ -101,7 +100,7 @@ if selected_types and selected_characters:
             for row in rarepairs.itertuples(index=False):
 
                 query = parse.quote_plus(ao3.wrangle_relationship_tag(row.A, row.B))
-                url = f'{ao3.url}?{ao3.search_field}="{query}"'
+                url = f'{ao3.search_url}?{ao3.search_field}="{query}"'
 
                 streamlit.markdown(f'* [{row.A}/{row.B}]({url}) ({row.count})')
         
