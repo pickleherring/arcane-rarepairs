@@ -16,7 +16,7 @@ relationships = relationships.sort_values(['A', 'B'])
 
 streamlit.title('Arcane rarepairs')
 streamlit.markdown('Browse fanfiction rarepairs from the acclaimed steampunk melodrama *Arcane*.')
-streamlit.caption('last updated: 6th Dec 2022')
+streamlit.caption('last updated: 14th Dec 2022')
 streamlit.markdown("""
 ---
 
