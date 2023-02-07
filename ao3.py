@@ -219,6 +219,8 @@ if __name__ == '__main__':
     if username and password:
         session = login(session, username, password)
         print(f'logged in as {username}')
+    else:
+        print('anonymous user session, not all fics will be visible')
     
     output_filename = 'relationships.csv'
 
