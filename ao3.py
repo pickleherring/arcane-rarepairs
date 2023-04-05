@@ -32,6 +32,7 @@ password = os.environ.get('AO3_PASSWORD')
 # NOTE: Set a very conservative sleep period to avoid AO3's rate limiting.
 sleep_period = 5
 backoff_factor = 60
+max_retries = 3
 
 login_url = 'https://archiveofourown.org/users/login'
 search_url = 'https://archiveofourown.org/works/search'
@@ -41,7 +42,7 @@ parser = 'lxml'
 
 work_count_pattern = regex.compile('[0-9,]+')
 
-# NOTE: AO3's canonical tag for Vander now places him in League fandom, not Arcane
+# NOTE: AO3's canonical tag for Vander now places him in League fandom, not Arcane.
 champions = [
     'Caitlyn',
     'Ekko',
@@ -60,11 +61,19 @@ special_case_names = [
 ]
 
 
-class LoginError(Exception):
+class AO3Error(Exception):
     pass
 
 
-class RateLimitedError(Exception):
+class LoginError(AO3Error):
+    pass
+
+
+class RateLimitedError(AO3Error):
+    pass
+
+
+class ServerError(AO3Error):
     pass
 
 
@@ -167,22 +176,18 @@ def get_work_count(session, name1, name2):
     This isn't perfect but is reasonably easy compared to laborious work-by-work checking. 
     """
 
-    relationship_tag = wrangle_relationship_tag(name1, name2)
+    time.sleep(sleep_period)
 
+    relationship_tag = wrangle_relationship_tag(name1, name2)
     response = session.get(search_url, params={search_field: f'"{relationship_tag}"'})
 
     if response.status_code == 429:
         raise RateLimitedError(f'rate limited with sleep period {sleep_period}, try increasing')
+    elif response.status_code >= 500:
+        raise RateLimitedError(f'internal server error {response.status_code} {response.reason}')
 
     soup = bs4.BeautifulSoup(response.text, features=parser)
     main_div = soup.find('div', attrs={'id': 'main'})
-    
-    if main_div is None:
-        print('\n[DEBUG] invalid response text but no rate limit warning in response\n')
-        print(response.status_code)
-        print(response.text)
-        raise RateLimitedError()
-
     header = main_div.find('h3', attrs={'class': 'heading'})
 
     if header:
@@ -211,7 +216,6 @@ if __name__ == '__main__':
 
     n_pairs = relationships.shape[0]
     work_counts = []
-    started = False
 
     session = requests.Session()
     session.mount(
@@ -235,19 +239,23 @@ if __name__ == '__main__':
 
     for a, b in zip(relationships['A'], relationships['B']):
 
-        if started:
-            time.sleep(sleep_period)
-        else:
-            started = True
+        work_count = None
+        retries = 0
 
-        try:
-            work_count = get_work_count(session, a, b)
-            work_counts.append(work_count)
-            print(f'[{len(work_counts)} of {n_pairs}] {a}/{b}: {work_count}')
-        except RateLimitedError:
-            output_filename = 'temp.csv'
-            print('rate limited, aborting. incomplete results saved to \'temp.csv\'')
-            break
+        while retries < max_retries:
+            try:
+                work_count = get_work_count(session, a, b)
+                break
+            except AO3Error:
+                retries = retries + 1
+                print(f'attempt {retries} failed')
+        
+        if work_count is None:
+            raise AO3Error(f'failed after {max_retries} attempts')
+        
+        work_counts.append(work_count)
+
+        print(f'[{len(work_counts)} of {n_pairs}] {a}/{b}: {work_count}')
     
     relationships['count'] = work_counts
     relationships.to_csv(output_filename, index=False)
