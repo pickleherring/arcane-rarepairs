@@ -41,6 +41,7 @@ parser = 'lxml'
 
 work_count_pattern = regex.compile('[0-9,]+')
 
+# NOTE: AO3's canonical tag for Vander now places him in League fandom, not Arcane
 champions = [
     'Caitlyn',
     'Ekko',
@@ -48,6 +49,7 @@ champions = [
     'Jayce',
     'Jinx',
     'Singed',
+    'Vander',
     'Vi',
     'Viktor',
 ]
@@ -174,6 +176,13 @@ def get_work_count(session, name1, name2):
 
     soup = bs4.BeautifulSoup(response.text, features=parser)
     main_div = soup.find('div', attrs={'id': 'main'})
+    
+    if main_div is None:
+        print('\n[DEBUG] invalid response text but no rate limit warning in response\n')
+        print(response.status_code)
+        print(response.text)
+        raise RateLimitedError()
+
     header = main_div.find('h3', attrs={'class': 'heading'})
 
     if header:
